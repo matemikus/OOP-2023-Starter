@@ -1,43 +1,61 @@
 package ie.tudublin;
-
 import java.util.ArrayList;
 
-public class Word extends Follow{
+public class Word 
+{
     Follow follow;
     private String word;
     ArrayList<Follow> follows = new ArrayList<>();
+    
 
-    public Word(String word) {
+    public Word(String word)
+    {
         this.word = word;
         this.follows = new ArrayList<>();
     }
 
-    public String getWord() {
+    public String getWord() 
+    {
         return this.word;
     }
 
-    public ArrayList<Follow> getFollows() {
+    public ArrayList<Follow> getFollows() 
+    {
         return this.follows;
     }
 
-    public void setWord(String word) {
-        this.word = word;
+    public void addFollow(String FollowWord) 
+    {
+        Follow follow = findFollow(FollowWord);
+        if(follow == null) 
+        {
+            follows.add(new Follow(FollowWord, 1));
+        } 
+        else 
+        {
+            follow.increment(); // count++
+            
+        }
     }
 
-    public void setFollows(ArrayList<Follow> follows) {
-        this.follows = follows;
-    }
-
-    public void addFollow(Follow follow) {
-        this.follows.add(follow);
+    public Follow findFollow(String followWord) 
+    {
+        for(Follow follow : follows) 
+        {
+            if (follow.getWord().equals(followWord)) 
+            {
+                return follow;
+            }
+        }
+        return null;
     }
 
     @Override
-    public String toString() {
+    public String toString() 
+    {
         StringBuilder s = new StringBuilder(); // Making string bUilder which can construc strings
+        s.append(word).append(" ");
 
         return s.toString();
     }
-   
 }
-

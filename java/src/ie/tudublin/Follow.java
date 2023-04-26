@@ -4,17 +4,11 @@ public class Follow {
     private String word;
     private int count;
 
-    public Follow() {
-        this.word = ""; //Setting string
-        this.count = 0; //  Setting number
-    }
-
-    //Constructor 
+    // Constructor
     public Follow(String word, int count) {
         this.word = word;
         this.count = count;
     }
-
 
     // Getters and setters
     public String getWord() {
@@ -33,9 +27,12 @@ public class Follow {
         this.count = count;
     }
 
+    public void increment() {
+        count++;
+    }
+
     @Override
     public String toString() {
-        return "Follow = " + "word='" + word  +", count=" + count +'.';
+        return "Follow = " + "word='" + word + ", count=" + count + '.';
     }
 }
-
