@@ -31,6 +31,10 @@ public class Word {
         this.follows.add(follow);
     }
 
+    @Override
+    public String toString() {
+       
+    }
    
 }
 
