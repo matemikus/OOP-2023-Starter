@@ -2,7 +2,8 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-public class Word {
+public class Word extends Follow{
+    Follow follow;
     private String word;
     ArrayList<Follow> follows = new ArrayList<>();
 
@@ -33,7 +34,9 @@ public class Word {
 
     @Override
     public String toString() {
-       
+        StringBuilder s = new StringBuilder(); // Making string bUilder which can construc strings
+
+        return s.toString();
     }
    
 }
